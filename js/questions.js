@@ -42,57 +42,6 @@ window.onload = function(){
  xhttp2.send();
  
 }
-  //---------- AMRQ_003 -----------
-    generarTipoRadio(2, "quest03", "profe_004", "radioDiv1");
-    answerq03 = getAnswerRadio("profe_004");
-    answerq03r = getAnswerDataRadio("profe_004", answerq03-1);
-	console.debug("Respuesta obtenida para quest03: " + answerq03);
-    
-    //---------- AMRQ_004 -----------
-    generarTipoRadio(3, "quest04", "AMRQ_004", "radioDiv2");
-    answerq04 = getAnswerRadio("AMRQ_004");
-    answerq04r = getAnswerDataRadio("AMRQ_004", answerq04-1);
-	console.debug("Respuesta obtenida para quest04: " + answerq04);
-
-    //Obtiene el título y las opciones para cargarlo.
-    function generarTipoRadio(idTag,idHtml, idXml, divId){
-    	var tituloRadio = xmlDoc.getElementsByTagName("title")[idTag].innerHTML;
-	    var opcionesRadio = [];
-	    var nopt = xmlDoc.getElementById(idXml).getElementsByTagName('option').length;
-	    for (i = 0; i < nopt; i++) {
-	        opcionesRadio[i] = xmlDoc.getElementById(idXml).getElementsByTagName('option')[i].innerHTML;
-	    }
-	    ponerDatosRadio(tituloRadio, idHtml, opcionesRadio, divId);
-    }   
- //Hace el get de la respuesta tipo radio.
-    function getAnswerRadio(idXml){
-    	return parseInt(xmlDoc.getElementById(idXml).getElementsByTagName('answer')[0].innerHTML);
-    }
- //Hace el get de la respuesta tipo radio.
-    function getAnswerDataRadio(idXml, id){
-    	return xmlDoc.getElementById(idXml).getElementsByTagName('option')[id].innerHTML;
-    }
-
-//RADIO
-function ponerDatosRadio(titulo, id, options, divId) {
-    document.getElementById(id).innerHTML = titulo;
-    var radioContainer = document.getElementById(divId);
-
-    for (i = 0; i < options.length; i++) {
-        var input = document.createElement("input");
-        var label = document.createElement("label");
-        label.innerHTML = options[i];
-        label.setAttribute("for", divId + "_" + i);
-        input.type = "radio";
-        input.id = divId + "_" + i;
-        input.className = "radio_opt";
-        input.name = divId;
-        input.value = i;
-        radioContainer.appendChild(input);
-        radioContainer.appendChild(label);
-        radioContainer.appendChild(document.createElement("br"));
-    }
-}
 
 //****************************************************************************************************
 // Recuperamos los datos del fichero XML xml/preguntas.xml
