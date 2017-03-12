@@ -3,28 +3,40 @@
 <?xml-stylesheet type="text/xsl" href="transform.xsl"?>
 
 <questions>
-    <question id="profe_001">
-	<type>text</type>
-	<title>Adivina el número secreto... </title>
-	<answer>23</answer>
-    </question>
-    <question id="profe_002">
-	<type>select</type>
-	<title>HTML son las iniciales de...</title>
-	<option>Hyper Text Transfer Protocol</option>
-	<option>File Transfer Protocol</option>
-	<option>Hypertext markup language</option>
-	<answer>2</answer>
-    </question>
-     <question id="profe_003">
-	<type>checkbox</type>
-	<title>Marca las frutas</title>
-	<option>naranja</option>
-	<option>verde</option>
-	<option>fresa</option>
-	<option>violeta</option>
-	<answer>0</answer>
-	<answer>2</answer>
-    </question>
+
 	
+	<question id="profe_001">
+		<type>text</type>
+		<title>3.- ¿Quien escribio Parque Jurásico?</title>
+		<answer>MICHAEL CRICHTON</answer>
+	</question>
+	
+	<question id="profe_002">
+		<type>checkbox</type>
+		<title>2.- ¿Quién canta Booma Yee?</title>
+		<option>a) Geo Da Silva@Jack MAzzoni</option>
+		<option>b) Bustamante</option>
+		<option>c) Shakira</option>
+		<answer>1</answer>
+	</question>
+<question id="profe_003">
+		<type>select</type>
+		<title>6.- ¿Cuando murio Francisco Franco?</title>
+		<option>a) 7 de mayo de 1945</option>
+		<option>b) 20 de noviembre de 1975</option>
+		<option>c) 14 de abril de 1912</option>
+		<option>d) 26 de junio de 1977</option> 
+		<answer>2</answer>
+	</question>
+	<question id="profe_004">
+		<type>radio</type>
+		<title>5.- ¿Cuando finalizo la Guerra Civil Española :</title>
+		<option>a) 26 de junio de 1936</option>
+		<option>b) 18 de julio de 1936</option>
+		<option>c) 1 de abril de 1939</option>
+		<option>d)20 de noviembre de 1975</option>
+		<answer>2</answer>
+	</question>
+
+
 </questions>
