@@ -28,7 +28,15 @@
 		<option>d) 26 de junio de 1977</option> 
 		<answer>2</answer>
 	</question>
-	
+	<question id="profe_004">
+		<type>radio</type>
+		<title>5.- ¿Cuando finalizo la Guerra Civil Española :</title>
+		<option>a) 26 de junio de 1936</option>
+		<option>b) 18 de julio de 1936</option>
+		<option>c) 1 de abril de 1939</option>
+		<option>d)20 de noviembre de 1975</option>
+		<answer>2</answer>
+	</question>
 
 
 </questions>
