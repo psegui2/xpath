@@ -77,7 +77,19 @@ function gestionarXml(dadesXml){
   respuestasCheckbox[i]=xmlDoc.getElementById("profe_003").getElementsByTagName("answer")[i].innerHTML;
  }
 }
-
+//RADIO
+ //Recuperamos el título y las opciones (que están dentro de los nodos seleccionados con Xpath: nodesSelect)
+ var tituloCheckbox = xmlDoc.getElementsByTagName("title")[2].innerHTML;
+ var opcionesCheckbox = [];
+ var xpath="/questions/question[@id='profe_004']/option";
+ var nodesCheckbox = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ANY_TYPE, null); 
+ ponerDatosCheckboxHtml(tituloCheckbox,nodesCheckbox);
+ //guardamos las respuestas correctas
+ var nres = xmlDoc.getElementById("profe_004").getElementsByTagName('answer').length;
+ for (i = 0; i < nres; i++) { 
+  respuestasCheckbox[i]=xmlDoc.getElementById("profe_004").getElementsByTagName("answer")[i].innerHTML;
+ }
+}
 //****************************************************************************************************
 //implementación de la corrección
 
@@ -168,6 +180,26 @@ function ponerDatosCheckboxHtml(t,nodes){
    result = nodes.iterateNext();
   }    
 }
+function ponerDatosRadioHtml(t,nodes){
+ var checkboxContainer=document.getElementById('radioContenedor');
+ document.getElementById('titleRadio').innerHTML = t;
+  var result = nodes.iterateNext();
+  i=0;
+  while (result) {
+   var input = document.createElement("input");
+   var label = document.createElement("label");   
+   label.innerHTML = result.innerHTML
+   label.setAttribute("for", "color_"+i);
+   input.type="checkbox";
+   input.name="color";
+   input.id="color_"+i; i++;
+   checkboxContainer.appendChild(input);
+   checkboxContainer.appendChild(label);
+   checkboxContainer.appendChild(document.createElement("br"));
+   result = nodes.iterateNext();
+  }    
+}
+
 
 //****************************************************************************************************
 //Gestionar la presentación de las respuestas
